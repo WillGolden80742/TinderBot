@@ -1,6 +1,4 @@
-# README.md
-
-## Tinder Bot Automático
+## TinderBot
 
 Este é um script simples em JavaScript que simula interações automáticas com os botões de "Curtir" e "Não Curtir" no Tinder. Lembre-se de que o uso de bots pode violar os termos de serviço da plataforma, e seu uso é por sua própria conta e risco.
 
