@@ -1,46 +1,34 @@
-# TinderBot
+# README.md
 
-Este é um bot simples para automatizar a interação com o Tinder. O script foi desenvolvido para clicar aleatoriamente nos botões "Curti" e "Não Curti" da interface do usuário.
+## Tinder Bot Automático
 
-## Instruções de Uso
+Este é um script simples em JavaScript que simula interações automáticas com os botões de "Curtir" e "Não Curtir" no Tinder. Lembre-se de que o uso de bots pode violar os termos de serviço da plataforma, e seu uso é por sua própria conta e risco.
 
-Certifique-se de estar na página correta do Tinder antes de executar o script. Os botões necessários devem estar presentes na página.
+### Instruções de Uso
 
-### Pré-requisitos
+1. Abra o Tinder no seu navegador.
+2. Certifique-se de estar na página correta, onde os botões "Curtir" e "Não Curtir" estão visíveis.
+3. Abra o console do navegador (geralmente pressionando F12 e indo para a guia "Console").
+4. Cole o código do script no console e pressione Enter.
+5. O bot começará a simular cliques aleatórios nos botões.
 
-- Navegador da web com suporte ao JavaScript.
-- Página do Tinder carregada.
+### Importante
 
-### Como Usar
+Certifique-se de entender e concordar com os Termos de Serviço do Tinder antes de usar este script automatizado. O uso de bots pode resultar em suspensão ou banimento da sua conta.
 
-1. Abra o console do desenvolvedor no seu navegador. (Geralmente, você pode pressionar F12 para abrir as Ferramentas do Desenvolvedor e acessar a guia "Console".)
-2. Cole o código do script no console.
-3. Execute o script.
+### Funções Principais
 
-Certifique-se de verificar a existência dos botões "Curti" e "Não Curti" na página antes de executar o script. Caso contrário, uma mensagem de erro será exibida no console.
+- `getRandomBoolean()`: Retorna um valor booleano aleatório.
+- `clickRandomButton()`: Procura e clica aleatoriamente nos botões "Curtir" ou "Não Curtir".
+- `executeWithRandomInterval()`: Executa a função `clickRandomButton()` em intervalos aleatórios.
 
-## Funções
+### Notas
 
-### `getRandomBoolean()`
+- Se os botões não forem encontrados, uma mensagem de erro será exibida no console.
+- O intervalo entre cliques é definido aleatoriamente entre 500ms e 1500ms.
 
-Esta função retorna um valor booleano aleatório (`true` ou `false`) com uma probabilidade de 50%.
+### Aviso
 
-### `clickRandomButton()`
+O desenvolvedor deste script não se responsabiliza por qualquer ação tomada pelo Tinder em relação ao uso deste bot. Use-o de maneira ética e esteja ciente das possíveis consequências.
 
-Esta função localiza os botões "Curti" e "Não Curti" na página e clica aleatoriamente em um deles com base no resultado da função `getRandomBoolean()`.
-
-### `executeWithRandomInterval()`
-
-Esta função executa `clickRandomButton()` e, em seguida, define um intervalo de tempo aleatório entre 500 e 1500 milissegundos antes de chamar a si mesma novamente por meio da função `setTimeout`. Isso cria um ciclo contínuo de interação aleatória.
-
-### Execução Automática
-
-Ao final do código, a função `executeWithRandomInterval()` é chamada para iniciar a execução automática do bot.
-
-## Aviso
-
-Este script é fornecido apenas para fins educacionais. O uso de bots para interagir com plataformas online pode violar os termos de serviço dessas plataformas. Use por sua conta e risco.
-
-## Nota
-
-Certifique-se de revisar e entender os Termos de Serviço do Tinder antes de usar este script. O desenvolvedor não assume qualquer responsabilidade por consequências decorrentes do uso deste script.
+**Lembre-se de respeitar os Termos de Serviço e as políticas da plataforma ao utilizar este script.**
