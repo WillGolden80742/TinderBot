@@ -3,8 +3,9 @@ function getRandomBoolean() {
 }
 
 function clickRandomButton() {
-  const likeButton = document.querySelector('button[aria-label="Curti"]');
-  const dislikeButton = document.querySelector('button[aria-label="Não Curti"]');
+  const hiddenSpans = document.querySelectorAll('span.Hidden');
+  const likeButton = Array.from(hiddenSpans).find(span => span.innerHTML.trim() === 'Curti').parentNode.parentNode.parentNode;
+  const dislikeButton = Array.from(hiddenSpans).find(span => span.innerHTML.trim() === 'Não').parentNode.parentNode.parentNode;
 
   if (!likeButton || !dislikeButton) {
     console.error("Botões não encontrados. Certifique-se de que está na página certa.");
