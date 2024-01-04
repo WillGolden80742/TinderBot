@@ -11,7 +11,7 @@ function clickRandomButton() {
   const dislikeButton = getButtonByBackgroundClass('Bgi($g-ds-background-nope):a');
 
   if (!likeButton || !dislikeButton) {
-    console.error("Botões não encontrados. Certifique-se de que está na página certa.");
+    console.error("Buttons not found. Make sure you are on the right page");
     return;
   }
 
