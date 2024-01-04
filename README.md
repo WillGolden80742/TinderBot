@@ -1,32 +1,29 @@
-## TinderBot
+# Tinder Bot README
 
-Este é um script simples em JavaScript que simula interações automáticas com os botões de "Curtir" e "Não Curtir" no Tinder. Lembre-se de que o uso de bots pode violar os termos de serviço da plataforma, e seu uso é por sua própria conta e risco.
+## Description
+This script is a simple Tinder bot designed to automate the process of swiping left (dislike) or right (like) on user profiles. It uses random intervals between swipes to simulate a more human-like behavior and avoid detection.
 
-### Instruções de Uso
+## Usage
+Before using the bot, make sure you are on the correct Tinder page. Open the browser console and paste the script. The bot will then start automatically swiping left or right at random intervals.
 
-1. Abra o Tinder no seu navegador.
-2. Certifique-se de estar na página correta, onde os botões "Curtir" e "Não Curtir" estão visíveis.
-3. Abra o console do navegador (geralmente pressionando F12 e indo para a guia "Console").
-4. Cole o código do script no console e pressione Enter.
-5. O bot começará a simular cliques aleatórios nos botões.
+**Note:** Use this script responsibly and be aware of the terms of service of the platform you are interacting with. Automation scripts may violate the terms, and the use of such scripts can lead to account suspension or other penalties.
 
-### Importante
+## Functions
 
-Certifique-se de entender e concordar com os Termos de Serviço do Tinder antes de usar este script automatizado. O uso de bots pode resultar em suspensão ou banimento da sua conta.
+### `getRandomBoolean()`
+Generates a random boolean value (true or false) to determine whether to swipe left or right.
 
-### Funções Principais
+### `getButtonByBackgroundClass(backgroundClass)`
+Finds and returns a button element with a specific background class on the Tinder page.
 
-- `getRandomBoolean()`: Retorna um valor booleano aleatório.
-- `clickRandomButton()`: Procura e clica aleatoriamente nos botões "Curtir" ou "Não Curtir".
-- `executeWithRandomInterval()`: Executa a função `clickRandomButton()` em intervalos aleatórios.
+### `clickRandomButton()`
+Clicks on a randomly selected button (like or dislike) using the `getRandomBoolean` function and the buttons' background classes.
 
-### Notas
+### `executeWithRandomInterval()`
+Executes the `clickRandomButton` function and sets a random interval (between 500ms and 1000ms) before calling itself again using `setTimeout`. This creates a loop with random intervals for continuous swiping.
 
-- Se os botões não forem encontrados, uma mensagem de erro será exibida no console.
-- O intervalo entre cliques é definido aleatoriamente entre 500ms e 1500ms.
+## Error Handling
+If the like and dislike buttons are not found on the page, an error message will be logged to the console, indicating that the buttons were not found. This is to ensure that the script is used on the correct page.
 
-### Aviso
-
-O desenvolvedor deste script não se responsabiliza por qualquer ação tomada pelo Tinder em relação ao uso deste bot. Use-o de maneira ética e esteja ciente das possíveis consequências.
-
-**Lembre-se de respeitar os Termos de Serviço e as políticas da plataforma ao utilizar este script.**
+## Disclaimer
+Use this script responsibly and in accordance with Tinder's terms of service. Automated interactions with Tinder or any other platform may violate terms and conditions, leading to consequences such as account suspension.
