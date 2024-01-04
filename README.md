@@ -1,4 +1,4 @@
-# Tinder Bot README
+# Tinder Bot
 
 ## Description
 This script is a simple Tinder bot designed to automate the process of swiping left (dislike) or right (like) on user profiles. It uses random intervals between swipes to simulate a more human-like behavior and avoid detection.
