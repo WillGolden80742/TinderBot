@@ -1,5 +1,5 @@
 function getRandomBoolean() {
-  return Math.random() < 0.8;
+  return Math.random() < 0.9;
 }
 
 function getButtonByBackgroundClass(backgroundClass) {
