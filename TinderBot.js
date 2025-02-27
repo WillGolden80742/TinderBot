@@ -1,27 +1,35 @@
-function getRandomBoolean() {
-  return Math.random() < 0.8;
-}
+const preferredTags = ["Monogamia", "Algo casual"];
 
 function getButtonByBackgroundClass(backgroundClass) {
-  return Array.from(document.querySelectorAll('.button')).find(element => element.classList.contains(backgroundClass));
+  return Array.from(document.querySelectorAll('.button')).find(element =>
+    element.classList.contains(backgroundClass)
+  );
 }
 
-function clickRandomButton() {
-  const likeButton = getButtonByBackgroundClass('Bgi($g-ds-background-like):a');
-  const dislikeButton = getButtonByBackgroundClass('Bgi($g-ds-background-nope):a');
+function isPreferredTagPresent() {
+  return Array.from(document.querySelectorAll('div')).some(div =>
+    preferredTags.some(tag => div.textContent.includes(tag))
+  );
+}
+
+function clickLikeIfPreferredOtherwiseDislike() {
+  const likeButton = getButtonByBackgroundClass('Bgc($c-ds-background-gamepad-sparks-like-default)');
+  const dislikeButton = getButtonByBackgroundClass('Bgc($c-ds-background-gamepad-sparks-nope-default)');
 
   if (!likeButton || !dislikeButton) {
-    console.error("Buttons not found. Make sure you are on the right page");
+    console.error("Botões não encontrados. Certifique-se de que está na página correta.");
     return;
   }
 
-  const randomChoice = getRandomBoolean();
-
-  randomChoice ? likeButton.click() : dislikeButton.click();
+  if (isPreferredTagPresent()) {
+    likeButton.click();
+  } else {
+    dislikeButton.click();
+  }
 }
 
 function executeWithRandomInterval() {
-  clickRandomButton();
+  clickLikeIfPreferredOtherwiseDislike();
   const randomInterval = Math.floor(Math.random() * (1000 - 500 + 1)) + 500;
   setTimeout(executeWithRandomInterval, randomInterval);
 }
