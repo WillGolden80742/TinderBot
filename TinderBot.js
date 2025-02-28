@@ -1,7 +1,7 @@
 const preferredTags = ["Monogamia", "Algo casual"];
 const shuffleMode = false; // Ativar para escolhas aleatórias
 const timeRange = 1; // Intervalo de tempo em segundos
-const likeProbability = 80; // Probabilidade de dar like (0 a 100)
+const likeProbability = 80;  // Probabilidade de dar like (0 a 100)
 
 function getButtonByBackgroundClass(backgroundClass) {
   return Array.from(document.querySelectorAll('.button')).find(element =>
