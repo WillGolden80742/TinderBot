@@ -1,4 +1,5 @@
 const preferredTags = ["Monogamia", "Algo casual"];
+const shuffleMode = true; // Defina como true para ignorar preferredTags e fazer escolhas aleatórias
 
 function getButtonByBackgroundClass(backgroundClass) {
   return Array.from(document.querySelectorAll('.button')).find(element =>
@@ -12,7 +13,11 @@ function isPreferredTagPresent() {
   );
 }
 
-function clickLikeIfPreferredOtherwiseDislike() {
+function getRandomBoolean() {
+  return Math.random() < 0.5;
+}
+
+function clickButton() {
   const likeButton = getButtonByBackgroundClass('Bgc($c-ds-background-gamepad-sparks-like-default)');
   const dislikeButton = getButtonByBackgroundClass('Bgc($c-ds-background-gamepad-sparks-nope-default)');
 
@@ -21,15 +26,19 @@ function clickLikeIfPreferredOtherwiseDislike() {
     return;
   }
 
-  if (isPreferredTagPresent()) {
-    likeButton.click();
+  if (shuffleMode) {
+    getRandomBoolean() ? likeButton.click() : dislikeButton.click();
   } else {
-    dislikeButton.click();
+    if (isPreferredTagPresent()) {
+      likeButton.click();
+    } else {
+      dislikeButton.click();
+    }
   }
 }
 
 function executeWithRandomInterval() {
-  clickLikeIfPreferredOtherwiseDislike();
+  clickButton();
   const randomInterval = Math.floor(Math.random() * (1000 - 500 + 1)) + 500;
   setTimeout(executeWithRandomInterval, randomInterval);
 }
