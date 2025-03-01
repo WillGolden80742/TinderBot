@@ -1,11 +1,11 @@
-const preferredTags =  ["Monogamia", "Algo casual"];
+const preferredTags = ["Monogamia", "Algo casual"];
 const shuffleMode = false; // Ativar para escolhas aleatórias
 const timeRange = 2; // Intervalo de tempo em segundos
 const likeProbability = 70;  // Probabilidade de dar like (0 a 100)
 
-function getButtonByBackgroundClass(backgroundClass) {
-  return Array.from(document.querySelectorAll('.button')).find(element =>
-    element.classList.contains(backgroundClass)
+function getButtonByText(text) {
+  return Array.from(document.querySelectorAll('button')).find(button =>
+    button.querySelector('span.Hidden')?.textContent.includes(text)
   );
 }
 
@@ -20,8 +20,8 @@ function getRandomBoolean(probability) {
 }
 
 function clickLikeIfPreferredOtherwiseDislike() {
-  const likeButton = getButtonByBackgroundClass('Bgc($c-ds-background-gamepad-sparks-like-default)');
-  const dislikeButton = getButtonByBackgroundClass('Bgc($c-ds-background-gamepad-sparks-nope-default)');
+  const likeButton = getButtonByText("Curtir");
+  const dislikeButton = getButtonByText("Não");
 
   if (!likeButton || !dislikeButton) {
     console.error("Botões não encontrados. Certifique-se de que está na página correta.");
@@ -39,8 +39,18 @@ function clickLikeIfPreferredOtherwiseDislike() {
   }
 }
 
+function openProfileAndDecide() {
+  const profileButton = getButtonByText("Abrir perfil");
+  if (profileButton) {
+    profileButton.click();
+    setTimeout(clickLikeIfPreferredOtherwiseDislike, 2000); // Aguarda 2s antes de decidir
+  } else {
+    clickLikeIfPreferredOtherwiseDislike();
+  }
+}
+
 function executeWithInterval() {
-  clickLikeIfPreferredOtherwiseDislike();
+  openProfileAndDecide();
   const randomErrorMargin = Math.random() * 500; // Adiciona uma margem de erro aleatória de até 500ms
   setTimeout(executeWithInterval, (timeRange * 1000) + randomErrorMargin);
 }
