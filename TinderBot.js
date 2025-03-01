@@ -1,5 +1,5 @@
-const preferredTags = ["Monogamia", "Algo casual"];
-const shuffleMode = true; // Ativar para escolhas aleatórias
+const preferredTags = ["Algo casual"];
+const shuffleMode = false; // Ativar para escolhas aleatórias
 const timeRange = 2; // Intervalo de tempo em segundos
 const likeProbability = 70;  // Probabilidade de dar like (0 a 100)
 
@@ -41,7 +41,8 @@ function clickLikeIfPreferredOtherwiseDislike() {
 
 function executeWithInterval() {
   clickLikeIfPreferredOtherwiseDislike();
-  setTimeout(executeWithInterval, timeRange * 1000); // Mantém o intervalo mesmo no modo de tags preferidas
+  const randomErrorMargin = Math.random() * 500; // Adiciona uma margem de erro aleatória de até 500ms
+  setTimeout(executeWithInterval, (timeRange * 1000) + randomErrorMargin);
 }
 
 executeWithInterval();
