@@ -39,10 +39,9 @@ function clickLikeIfPreferredOtherwiseDislike() {
   }
 }
 
-function executeWithRandomInterval() {
+function executeWithInterval() {
   clickLikeIfPreferredOtherwiseDislike();
-  const randomInterval = timeRange * 1000; // Converte segundos para milissegundos
-  setTimeout(executeWithRandomInterval, randomInterval);
+  setTimeout(executeWithInterval, timeRange * 1000); // Mantém o intervalo mesmo no modo de tags preferidas
 }
 
-executeWithRandomInterval();
+executeWithInterval();
