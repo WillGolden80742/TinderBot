@@ -1,4 +1,4 @@
-const preferredTags = ["Algo casual"];
+const preferredTags =  ["Monogamia", "Algo casual"];
 const shuffleMode = false; // Ativar para escolhas aleatórias
 const timeRange = 2; // Intervalo de tempo em segundos
 const likeProbability = 70;  // Probabilidade de dar like (0 a 100)
